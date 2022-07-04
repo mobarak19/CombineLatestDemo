@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  CombineLatestDemo
-//
-//  Created by Genusys Inc on 7/4/22.
-//
 
 import UIKit
 import Combine
@@ -16,8 +10,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var signUpBtn: UIButton!
     
-    @Published private var userName:String = ""
-    @Published private var password:String = ""
+    @Published private var userName:String = "a"
+    @Published private var password:String = "a"
     
     private var subsciptions:Set<AnyCancellable> = Set<AnyCancellable>()
     
@@ -39,6 +33,8 @@ class ViewController: UIViewController {
         userNameF.addTarget(self, action: #selector(onUserNameChanged), for: .editingChanged)
         
         passwordF.addTarget(self, action: #selector(onPasswordChanged), for: .editingChanged)
+        
+        signUpBtn.addTarget(self, action: #selector(onTappedSignUp), for: .touchUpInside)
     }
 
 
@@ -51,6 +47,10 @@ class ViewController: UIViewController {
     }
     
 
+    @objc func onTappedSignUp(){
+        
+
+    }
     
     
 }
